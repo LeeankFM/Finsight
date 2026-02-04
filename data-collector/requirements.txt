@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+polars
+pymongo
+python-dotenv
+pytest
+yfinance
+redis

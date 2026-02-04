@@ -1,0 +1,21 @@
+package com.finsight.portfoliomanager.application.ports.out;
+
+import java.util.Map;
+
+public interface MetricRepository {
+    void incrementAssetVolume(String symbol, double volume);
+
+    Map<String, Double> getTrendingAssets(int topN);
+
+    void recordUserActivity(String userId);
+
+    Long getTotalUsers();
+
+    void incrementPortfolioCount();
+
+    Long getTotalPortfolios();
+
+    void updatePortfolioPerformance(String portfolioId, double profit);
+
+    Map<String, Double> getTopPortfolios(int topN);
+}

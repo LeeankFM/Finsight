@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: portfolio-manager
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5433/finsight_db
+    username: user
+    password: mi_super_password_segura
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: mi_redis_pass_seguro

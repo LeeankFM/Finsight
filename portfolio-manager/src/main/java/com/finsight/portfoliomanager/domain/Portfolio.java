@@ -1,0 +1,34 @@
+package com.finsight.portfoliomanager.domain;
+
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.UUID;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Portfolio {
+    private UUID id;
+    private String name;
+    private String description;
+    private UUID userId;
+    private BigDecimal balance;
+    private List<Position> positions;
+    private List<Transaction> transactions;
+    private BigDecimal cumulativeDeposits;
+    private BigDecimal cumulativeWithdrawals;
+    private Double performance;
+
+    public BigDecimal getTotalAccountValue() {
+        BigDecimal positionValue = positions == null ? BigDecimal.ZERO
+                : positions.stream().map(Position::getTotalValue)
+                        .reduce(BigDecimal.ZERO, BigDecimal::add);
+        return balance.add(positionValue);
+    }
+}
