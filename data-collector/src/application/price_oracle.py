@@ -5,7 +5,8 @@ import os
 class PriceOracle:
     def __init__(self):
         host = os.getenv("DB_REDIS_HOST","localhost")
-        self.r = redis.Redis(host = host, port = 6379, db = 0, decode_responses = True)
+        password = os.getenv("DB_REDIS_PASSWORD", "mi_redis_pass_seguro")
+        self.r = redis.Redis(host=host, port=6379, password=password, db=0, decode_responses=True)
 
     def fetch_and_cache(self, symbol: str):
         try:

@@ -21,3 +21,9 @@ spring:
       host: localhost
       port: 6379
       password: mi_redis_pass_seguro
+
+grpc:
+  client:
+    local-grpc-server:
+      address: 'static://localhost:50051'
+      negotiation-type: plaintext
