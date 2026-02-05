@@ -1,4 +1,4 @@
-package com.finsight.portfoliomanager.infrastructure.adapters.out.persistence;
+package com.finsight.portfoliomanager.infrastructure.adapters.out.persistence.Entities;
 
 import java.math.BigDecimal;
 import java.util.UUID;

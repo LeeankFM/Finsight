@@ -1,0 +1,29 @@
+package com.finsight.portfoliomanager.application.ports.in;
+
+import java.util.UUID;
+import java.util.Optional;
+
+import com.finsight.portfoliomanager.application.ports.dto.auth.*;
+import com.finsight.portfoliomanager.domain.User;
+
+public interface UserUseCase {
+    // AUTH
+    AuthResult register(RegisterCommand command);
+
+    AuthResult login(LoginCommand command);
+
+    AuthResult refresh(RefreshCommand command);
+
+    void logout(UUID userId);
+
+    // ACCOUNT
+    Optional<User> findById(UUID userId);
+
+    Optional<User> findByEmail(String email);
+
+    void deactivate(UUID userId);
+
+    void changePassword(ChangePasswordCommand command);
+
+    void changeEmail(ChangeEmailCommand command);
+}

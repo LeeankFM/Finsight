@@ -12,6 +12,9 @@ import com.finsight.portfoliomanager.application.ports.out.PortfolioRepository;
 import com.finsight.portfoliomanager.domain.Portfolio;
 import com.finsight.portfoliomanager.domain.Position;
 import com.finsight.portfoliomanager.domain.Transaction;
+import com.finsight.portfoliomanager.infrastructure.adapters.out.persistence.Entities.PortfolioEntity;
+import com.finsight.portfoliomanager.infrastructure.adapters.out.persistence.Entities.PositionEntity;
+import com.finsight.portfoliomanager.infrastructure.adapters.out.persistence.Entities.TransactionEntity;
 
 import lombok.RequiredArgsConstructor;
 
